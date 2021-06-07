@@ -1,3 +1,5 @@
+use models;
+
 create table Category(
   c_id int not null AUTO_INCREMENT,
   category varchar(50) not null unique,
@@ -12,7 +14,7 @@ create table Product(
   foreign key(cf_id) references Category(c_id)
 );
 
-ALTER TABLE Prodcut AUTO_INCREMENT=100;
+ALTER TABLE Product AUTO_INCREMENT=100;
 
 insert into Category values
   (1, 'Phones'),
