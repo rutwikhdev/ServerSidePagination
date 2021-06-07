@@ -1,0 +1,42 @@
+.item {
+    display: flex;
+    margin: 20px 0px;
+    justify-content: center;
+    height: 30px;
+}
+
+.pid {
+    border: 1px solid;
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.product_name {
+    width: 200px;
+}
+
+.cid {
+    border: 1px solid;
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.category_name {
+    margin-left: 50px;
+    width: 100px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: tomato;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0px 3px 8px black;
+}

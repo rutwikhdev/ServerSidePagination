@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.forms {
+  width: fit-content;
+  height: 20%;
+  margin: auto;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.forms form input {
+  margin:15px;
+}
+
+.forms input {
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
