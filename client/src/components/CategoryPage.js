@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Category from './Category';
 
 // If we delete a category we should delete everything associated with it
 const CategoryPage = (props) => {
@@ -15,7 +16,7 @@ const CategoryPage = (props) => {
   if (catList.length > 0) {
     categoriesArray = Object.values(props.categoriesList).map(el => {
       return (
-        <div>{el.category}</div>
+        <Category category={el.category} c_id={el.c_id}/>
       );
     })
   }

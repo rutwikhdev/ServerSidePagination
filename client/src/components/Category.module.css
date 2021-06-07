@@ -1,0 +1,21 @@
+.category {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+}
+
+.btn {
+    width: 30px;
+    cursor: pointer;
+    background-color: tomato;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0px 3px 8px black;
+}

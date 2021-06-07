@@ -5,7 +5,6 @@ import classes from './Product.module.css';
 
 const Product = (props) => {
   const deleteProductHandler = async () => {
-
     await axios.post('http://localhost:4000/delete_product', {
       pid: props.p_id
     }).then(res => {
@@ -13,7 +12,6 @@ const Product = (props) => {
     }).catch(err => {
       throw err;
     });
-
   }
 
   return (

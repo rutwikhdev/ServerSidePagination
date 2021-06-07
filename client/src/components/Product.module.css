@@ -9,6 +9,7 @@
     border: 1px solid;
     margin-right: 20px;
     padding: 5px;
+    background-color: cadetblue;
 }
 
 .product_name {
@@ -19,6 +20,7 @@
     border: 1px solid;
     margin-right: 20px;
     padding: 5px;
+    background-color: bisque;
 }
 
 .category_name {

@@ -8,13 +8,13 @@ import classes from './App.module.css';
 
 const App = () => {
   const [categories, setCategories] = useState([]);
-  const [limit, setLimit] = useState(10)
+  const [limit, setLimit] = useState(10)  // default page limit
 
   const screenHeight = (e) => {
     e.preventDefault()
 
     var height = Math.floor((window.innerHeight-50) / 100)
-    if (height != limit && height >= 3) {
+    if (height !== limit && height >= 1) {
       setLimit(height + 1)
     }
   }
@@ -30,7 +30,6 @@ const App = () => {
   }
 
   const addCategoryHandler = async (category) => {
-
     await axios.post('http://localhost:4000/add_category', {
       name: category
     }).then((res) => {
@@ -38,7 +37,6 @@ const App = () => {
     }).catch((err) => {
       if (err) throw err;
     });
-
   }
 
   useEffect(() => {

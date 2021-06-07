@@ -6,15 +6,12 @@ const cors = require('cors')
 const app = express();
 app.use(bodyParser.json())
 app.use(cors());
-let print = 1;
 
 app.get('/products', async (req, res) => {
     const offset = parseInt(req.query.offset)
     const limit = parseInt(req.query.limit);
     var count;
     var jsonResult;
-    console.log('endpoint hit', print);
-    print ++
 
     var sql = `select count(*) as total_count from Product;
     select Product.p_id, Product.product, Category.c_id, Category.category 
@@ -28,12 +25,12 @@ app.get('/products', async (req, res) => {
     function sendResponse(val) {
         count = val[0].map(v=> Object.assign({}, v))
         jsonResult = val[1].map(v => Object.assign({}, v));
-        result = {}
         
+        result = {}
         result['total'] = count[0].total_count
         result['data'] = jsonResult || []
 
-        res.json(result)
+        res.status(200).json(result)
     }
 });
 
@@ -50,6 +47,18 @@ app.get('/categories', (req, res) => {
 app.post('/add_category', (req, res) => {
     var sql = `insert into Category (category) values('${req.body.name}');`;
     
+    conn.query(sql, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+    })
+
+    res.status(200).send(req.body);
+})
+
+app.post('/delete_category', (req, res) => {
+    const cat_id = req.body.c_id;
+    var sql = `delete from Product where cf_id = ${cat_id};delete from Category where c_id = ${cat_id};`;
+
     conn.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result);
